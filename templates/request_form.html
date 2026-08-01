@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Request Help - IT Help Center{% endblock %}
+
+{% block content %}
+  <h1>Submit a request to IT</h1>
+  <p class="subtitle">This creates a ticket in the IT queue. For urgent outages, still call the helpdesk directly.</p>
+
+  <form method="post" class="form" action="{{ url_for('request_form') }}">
+    <label>
+      Request type
+      <select name="request_type" required>
+        <option value="Password Reset">Password Reset</option>
+        <option value="Account Lockout">Account Lockout</option>
+        <option value="Network Issue">Network Issue</option>
+        <option value="Hardware Issue">Hardware Issue</option>
+        <option value="Access Request">Access Request</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+
+    <label>
+      Full name
+      <input type="text" name="full_name" required>
+    </label>
+
+    <label>
+      Work email
+      <input type="email" name="email" required>
+    </label>
+
+    <label>
+      Department
+      <input type="text" name="department">
+    </label>
+
+    <label>
+      Details
+      <textarea name="details" rows="4" placeholder="Anything that will help IT resolve this faster."></textarea>
+    </label>
+
+    <button type="submit" class="button">Submit request</button>
+  </form>
+{% endblock %}
