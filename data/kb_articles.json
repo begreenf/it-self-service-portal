@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "category": "Account & Access",
+    "title": "I forgot my password",
+    "steps": [
+      "Go to the company login page and click \"Forgot password\".",
+      "Enter your work email address and check your inbox for a reset link.",
+      "If you don't receive the email within 5 minutes, check your Spam folder.",
+      "Still stuck? Use the 'Request Help' form and select 'Password Reset' - IT will handle it manually."
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Account & Access",
+    "title": "My account is locked out",
+    "steps": [
+      "Accounts lock automatically after 5 failed login attempts, for 30 minutes.",
+      "Wait 30 minutes and try again with your correct password.",
+      "If you're sure your password is correct and it's still locked, submit a 'Password Reset' request - this usually means the account needs to be manually unlocked."
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Network",
+    "title": "VPN won't connect",
+    "steps": [
+      "Confirm you have an active internet connection outside the VPN first.",
+      "Restart the VPN client application completely (not just disconnect/reconnect).",
+      "Check that your VPN client shows the correct server address for your region.",
+      "If the issue persists, restart your computer - this resolves most stuck VPN sessions.",
+      "Still failing? Submit a 'Network Issue' request with the exact error message you're seeing."
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Network",
+    "title": "Wi-Fi keeps disconnecting",
+    "steps": [
+      "Forget the Wi-Fi network on your device and reconnect from scratch.",
+      "Move closer to the nearest access point if you're in a conference room or far corner.",
+      "Update your laptop's Wi-Fi driver if it hasn't been updated in a while.",
+      "If multiple people nearby are also affected, it's likely an access point issue - report it."
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Microsoft 365",
+    "title": "Outlook is not syncing new emails",
+    "steps": [
+      "Check the connection status icon in the bottom status bar of Outlook.",
+      "Go to Send/Receive > Update Folder to force a manual sync.",
+      "Restart Outlook completely.",
+      "If it's still not syncing, check outlook.office.com in a browser - if email is there, it's a client-side sync issue, not a server issue."
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Microsoft 365",
+    "title": "Can't access a shared Teams/SharePoint file",
+    "steps": [
+      "Confirm you're logged in with your work account, not a personal Microsoft account.",
+      "Ask the file owner to confirm you're on the share/permission list.",
+      "Try opening the link in a private/incognito browser window to rule out a cached login issue.",
+      "If permissions look correct but access still fails, submit an 'Access Request' with the file link."
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Hardware",
+    "title": "Laptop running very slow",
+    "steps": [
+      "Restart the laptop - this alone fixes the majority of slowdowns caused by memory leaks.",
+      "Check Task Manager (Ctrl+Shift+Esc) for any single application using unusually high CPU or memory.",
+      "Make sure Windows Update isn't installing updates in the background.",
+      "If it's consistently slow even after a restart, submit a hardware request - it may need a RAM upgrade or a disk health check."
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Printing",
+    "title": "Can't print to the office printer",
+    "steps": [
+      "Confirm the printer shows as 'Online' in Windows Settings > Printers & Scanners.",
+      "Try printing a test page directly from Windows to isolate the issue from the specific app.",
+      "Restart the Print Spooler service (or ask IT to) if jobs are stuck in the queue.",
+      "If the printer is offline for everyone, it's likely a network/hardware issue - report it as a general outage."
+    ]
+  }
+]
