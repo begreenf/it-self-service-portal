@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}IT Queue - IT Help Center{% endblock %}
+
+{% block content %}
+  <h1>IT Queue (demo view)</h1>
+  <p class="subtitle">This is what an IT tech would see on their side - read-only in this demo.</p>
+
+  {% if tickets %}
+    <table class="ticket-table">
+      <thead>
+        <tr>
+          <th>Ticket</th>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Status</th>
+          <th>Submitted</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for t in tickets %}
+          <tr>
+            <td>{{ t.id }}</td>
+            <td>{{ t.request_type }}</td>
+            <td>{{ t.full_name }}</td>
+            <td>{{ t.department or "—" }}</td>
+            <td><span class="status-badge status-{{ t.status|lower|replace(' ', '-') }}">{{ t.status }}</span></td>
+            <td>{{ t.created_at }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No tickets yet. Submit one from the <a href="{{ url_for('request_form') }}">Request Help</a> form.</p>
+  {% endif %}
+{% endblock %}
