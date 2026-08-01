@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Check Ticket Status - IT Help Center{% endblock %}
+
+{% block content %}
+  <h1>Check ticket status</h1>
+
+  <form method="post" class="form inline-form" action="{{ url_for('status') }}">
+    <label>
+      Ticket number
+      <input type="text" name="ticket_id" placeholder="TCK-123456" required>
+    </label>
+    <button type="submit" class="button">Look up</button>
+  </form>
+
+  {% if searched %}
+    {% if ticket %}
+      <div class="ticket-result">
+        <h2>{{ ticket.id }}</h2>
+        <p><strong>Type:</strong> {{ ticket.request_type }}</p>
+        <p><strong>Status:</strong> <span class="status-badge status-{{ ticket.status|lower|replace(' ', '-') }}">{{ ticket.status }}</span></p>
+        <p><strong>Submitted:</strong> {{ ticket.created_at }}</p>
+        <p><strong>Details:</strong> {{ ticket.details or "—" }}</p>
+      </div>
+    {% else %}
+      <p class="not-found">No ticket found with that number. Double-check it and try again.</p>
+    {% endif %}
+  {% endif %}
+{% endblock %}
