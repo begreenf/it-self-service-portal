@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Knowledge Base - IT Help Center{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1>How can we help?</h1>
+    <form method="get" action="{{ url_for('index') }}" class="search-form">
+      <input type="text" name="q" placeholder="Search: password, VPN, printer..." value="{{ query }}">
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  {% if query %}
+    <p class="results-summary">{{ articles|length }} result(s) for "{{ query }}"</p>
+  {% endif %}
+
+  <div class="card-grid">
+    {% for article in articles %}
+      <a class="card" href="{{ url_for('article', article_id=article.id) }}">
+        <span class="card-category">{{ article.category }}</span>
+        <h3>{{ article.title }}</h3>
+        <span class="card-link">View steps &rarr;</span>
+      </a>
+    {% else %}
+      <p>No articles matched your search. Try the <a href="{{ url_for('request_form') }}">Request Help</a> form instead.</p>
+    {% endfor %}
+  </div>
+
+  <section class="cta">
+    <p>Didn't find what you're looking for?</p>
+    <a class="button" href="{{ url_for('request_form') }}">Submit a request to IT</a>
+  </section>
+{% endblock %}
