@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Request submitted - IT Help Center{% endblock %}
+
+{% block content %}
+  <div class="confirmation">
+    <h1>&#9989; Request submitted</h1>
+    <p>Your ticket number is:</p>
+    <p class="ticket-id">{{ ticket_id }}</p>
+    <p>Save this number to check your request status later.</p>
+    <a class="button" href="{{ url_for('status') }}">Check ticket status</a>
+    <a class="back-link" href="{{ url_for('index') }}">&larr; Back to Knowledge Base</a>
+  </div>
+{% endblock %}
